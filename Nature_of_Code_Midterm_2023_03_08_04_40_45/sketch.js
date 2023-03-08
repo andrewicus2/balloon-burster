@@ -18,6 +18,10 @@ let cooldown,delayLength;
 
 let balloons = [];
 
+function preload(){
+  AlloyInk = loadFont("AlloyInk-lgdWw.otf");
+}
+
 function setup() {
   const can = createCanvas(400, 600);
   can.parent('sketch-holder');
@@ -27,19 +31,28 @@ function setup() {
   
   fireSpeedUpgrade = createButton('Upgrade Fire Speed ('+fireSpeedUpgradeCost+' pts)');
   fireSpeedUpgrade.mousePressed(upgradeFire);
+  fireSpeedUpgrade.parent('button-container')
   
   firePwrUpgrade = createButton('Upgrade Fire Power ('+firePwrUpgradeCost+' pts)');
   firePwrUpgrade.mousePressed(upgradeFirePwr);
+  firePwrUpgrade.parent('button-container')
 
   
   bSpeedUpgrade = createButton('Slow Balloons ('+bSpeedUpgradeCost+' pts)')
   bSpeedUpgrade.mousePressed(upgradebSpeed);
+  bSpeedUpgrade.parent('button-container')
+
 
   bSpawnSpeedUpgrade = createButton('Increase Balloons Spawn Rate ('+bSpawnSpeedUpgradeCost+' pts)')
   bSpawnSpeedUpgrade.mousePressed(upgradebSpawnSpeed);
+  bSpawnSpeedUpgrade.parent('button-container')
+
 
   hatUpgrade = createButton('Get a Lovely Hat ('+hatUpgradeCost+' pts)')
   hatUpgrade.mousePressed(upgradeHat);
+  hatUpgrade.parent('button-container')
+  textFont(AlloyInk);
+
 }
 
 function mousePressed(){
@@ -123,11 +136,11 @@ function upgradeHat(){
 function draw() {
   background(255);
   
-  fill(0)
+  fill('#4141c0')
   textAlign(CENTER);
-  textSize(20);
+  textSize(50);
   textStyle(BOLD);
-  text(points,width/2,50)
+  text(points,width/2,80)
     
   if(random(1)<map(bSpawnSpeedLevel,0,5,0.02,0.2)){
     let colorCode = floor(random(3))
@@ -192,6 +205,8 @@ function draw() {
     }
     else if(keyCode == 83 && cannon.pos.y <= height - 100){
       cannon.applyForce(createVector(0,0.1))
+    } else if(keyCode == 187){
+      points++;
     }
   }
 

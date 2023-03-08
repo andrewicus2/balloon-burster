@@ -86,8 +86,9 @@ class Cannon {
 
     rotate(this.angle)
     if(!gameWon){
+      stroke('#3144c0')  
       rect(20,0,40,10)
-      fill(0)    
+      fill('#3144c0') 
       circle(0,0,20)
       strokeCap(SQUARE);
       strokeWeight(10);

@@ -37,8 +37,9 @@ class Projectile{
     if(gameWon){
       fill(255, 215, 0)
     } else{
-      fill(0)
+      fill('#4141c0')
     }
+    stroke('#4141c0')
     translate(this.pos.x,this.pos.y)
     rotate(this.angle)
     circle(0,0, this.r*2);

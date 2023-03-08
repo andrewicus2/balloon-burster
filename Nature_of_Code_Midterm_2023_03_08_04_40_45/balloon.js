@@ -61,10 +61,12 @@ class Balloon{
     //   ellipse(x*map(y, this.r,this.r*8,0.1,3)*this.r/8,y,this.r/10)
     // }    
     
-    
+    colorMode(HSB)
     fill(this.color);
+    // fill(random(255), 255, 255)
     //tie off
     beginShape()
+    noStroke()
     vertex(0,this.r*1.1)
     vertex(this.r*0.2,this.r*1.5)
     vertex(-this.r*0.2,this.r*1.5);

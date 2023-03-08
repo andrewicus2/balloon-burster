@@ -1,20 +1,38 @@
+@font-face {
+  font-family: AlloyInk;
+  src: url(AlloyInk-lgdWw.otf);
+}
+
+
 html, body {
   margin: 0;
-  padding: 0;
+  padding: 10px;
 }
 canvas {
   display: block;
-  border: 1px solid #000;
+  border-radius: 10px;
+  filter: drop-shadow(0px 3px 5px #4141c031);
+  border: 1px solid #4141c031;
+  margin-bottom: 5px;
 }
 
 button{
+  color: #4141c0;
   background: #fff;
-  border:none;
-  border: 1px solid #000;
-  padding: 5px 10px;
-  border-radius: 5px;
+  border: 1px solid #4141c0;
+  filter: drop-shadow(0px 3px 1px #4141c031);
+  padding: 10px;
+  border-radius: 50px;
   display: block;
-  margin-top: 5px;
+  margin-top: 7px;
+  width: 100%;
+  transition: all 0.2s;
+  font-weight: bold;
+}
+
+button:hover{
+  transform:translateY(-3px);
+  transition: all 0.2s;
 }
 
 body{
@@ -23,14 +41,50 @@ body{
   justify-content: center;
   height: 100vh;
   flex-direction: column;
+  background-repeat: repeat-y repeat-x;
+  background-size: 100px;
+  background-color: #fff;
+}
+
+button:nth-child(1)::before{
+  content: "🔫 ";
+}
+
+button:nth-child(2)::before{
+  content: "💥 ";
+}
+
+button:nth-child(3)::before{
+  content: "🐢 ";
+}
+
+button:nth-child(4)::before{
+  content: "🎈 ";
+}
+
+button:nth-child(5)::before{
+  content: "🎩 ";
 }
 
 h1{
   text-align: center;
-  font-family: Courier;
+  font-family: AlloyInk;
   padding: 0px;
   margin-bottom: 5px;
+  font-size: 40px;
+  color: #3144c0;
+  padding: 10px;
+  border-radius: 10px;
 }
 
+#button-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 400px;
+  margin-bottom: 50px;
+}
 
 
